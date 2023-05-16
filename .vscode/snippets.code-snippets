@@ -1,0 +1,63 @@
+{
+    "New Custom React Component": {
+        "prefix": "cn",
+        "body": [
+            "import type { ForwardedRef } from 'react'",
+            "",
+            "import type { PropsWithAs, WithClassName } from '@/services/component.service'",
+            "import { forwardRefWithAs } from '@/services/component.service'",
+            "",
+            "interface IProps extends WithClassName {",
+            "  $2",
+            "}",
+            "",
+            "const defaultAs = 'div'",
+            "type IDefaultAs = typeof defaultAs",
+            "",
+            "function Component(",
+            "  props: PropsWithAs<IProps, IDefaultAs>,",
+            "  ref: ForwardedRef<null>",
+            ") {",
+            "  const { as: Tag = defaultAs, className, ...rest } = props",
+            "  return <Tag ref={ref} className={className} {...rest}>$3</Tag>",
+            "}",
+            "",
+            "export const $1 = forwardRefWithAs<IProps, IDefaultAs>(Component)",
+            ""
+        ],
+        "description": ""
+    },
+    "New Raw Custom React Component": {
+        "prefix": "cnr",
+        "body": [
+            "import type { ForwardedRef } from 'react'",
+            "import { forwardRef } from 'react'",
+            "",
+            "import type { WithClassName } from '@/types/propTypes'",
+            "",
+            "interface IProps extends WithClassName {",
+            "  $2",
+            "}",
+            "",
+            "type IElementType = HTMLDivElement",
+            "",
+            "function Component(props: IProps, ref: ForwardedRef<IElementType>) {",
+            "  const { className } = props",
+            "  return <div ref={ref} className={className}>$3</div>",
+            "}",
+            "",
+            "export const $1 = forwardRef<IElementType, IProps>(Component)",
+            ""
+        ],
+        "description": ""
+    },
+    "Export default Page": {
+        "prefix": "edf",
+        "body": [
+            "export default function Page() {",
+            "  return <></>",
+            "}"
+        ],
+        "description": ""
+    }
+}
